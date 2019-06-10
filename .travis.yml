@@ -10,3 +10,10 @@ after_success:
   - docker build -t scotpfleghaar/multi-nginx ./nginx
   - docker build -t scotpfleghaar/multi-server ./server
   - docker build -t scotpfleghaar/multi-worker ./worker
+  # Login to the docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # Take those images and push to the docker hub
+  - docker push scotpfleghaar/multi-client
+  - docker push scotpfleghaar/multi-nginx
+  - docker push scotpfleghaar/multi-server
+  - docker push scotpfleghaar/multi-worker
