@@ -4,7 +4,20 @@
     {
       "name": "client",
       "image": "scotpfleghaar/multi-client",
-      "hostname": "client"
+      "hostname": "client",
+      "essential": false
+    },
+    {
+      "name": "server",
+      "image": "scotpfleghaar/multi-server",
+      "hostname": "api",
+      "essential": false
+    },
+    {
+      "name": "worker",
+      "image": "scotpfleghaar/multi-worker",
+      "hostname": "worker",
+      "essential": false
     }
   ]
 }
